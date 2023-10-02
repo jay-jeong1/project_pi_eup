@@ -4,6 +4,7 @@
  * @author kevinc97
  * @param <K> Generic value of the key
  * @param <E> Generic value of the value
+ * @version 2023-10-01
  */
 public class KVPair<K extends Comparable<K>, E> implements Comparable<KVPair<K,
         E>>
@@ -34,7 +35,7 @@ public class KVPair<K extends Comparable<K>, E> implements Comparable<KVPair<K,
     /**
      * Compare against the key
      * 
-     * @param it The key that is being compared
+     * @param obj The key that is being compared
      * @return 0, -1, 1 depending on the result
      */
     public int compareTo(K obj) {

@@ -21,51 +21,57 @@
  * 
  * @author Jaison Dasika
  * @author Jihoo Jeong
+ * @version 10/1/2023
  */
 public class Internalnode extends BintreeNode
 {
     private BintreeNode left;
     private BintreeNode right;
 
-/**
- * Constructor for Internal node class.
- * @param left The left of the Internal node
- * @param right The right of the Internal node
- */
-public Internalnode(BintreeNode left, BintreeNode right) {
-    this.left = left;
-    this.right = right;
-}
-/**
- * Getter for left node
- * @return The left node
- */
-public BintreeNode getLeft() {
-    return left;
-}
-/**
- * Getter for right node
- * @return The right node
- */
-public BintreeNode getRight() {
-    return right;
-}
+    /**
+     * Constructor for Internal node class.
+     * 
+     * @param left  The left of the Internal node
+     * @param right The right of the Internal node
+     */
+    public Internalnode(BintreeNode left, BintreeNode right) {
+        this.left = left;
+        this.right = right;
+    }
 
-/**
- * Getter for left node
- * @return The left node
- */
-public void setLeft(BintreeNode left) {
-    this.left = left;
-}
-/**
- * Getter for right node
- * @return The right node
- */
-public void setRight(BintreeNode right) {
-    this.right = right;
-}
+    /**
+     * Getter for left node
+     * 
+     * @return The left node
+     */
+    public BintreeNode getLeft() {
+        return left;
+    }
 
+    /**
+     * Getter for right node
+     * 
+     * @return The right node
+     */
+    public BintreeNode getRight() {
+        return right;
+    }
+
+    /**
+     * Getter for left node
+     * 
+     * @param left The left node
+     */
+    public void setLeft(BintreeNode left) {
+        this.left = left;
+    }
+
+    /**
+     * Getter for right node
+     * 
+     * @param right The right node
+     */
+    public void setRight(BintreeNode right) {
+        this.right = right;
+    }
 }
-
-

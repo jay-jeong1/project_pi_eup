@@ -21,6 +21,7 @@
  * 
  * @author Jaison Dasika
  * @author Jihoo Jeong
+ * @version 2023-10-01
  */
 public class EmptyLeaf extends BintreeNode
 {

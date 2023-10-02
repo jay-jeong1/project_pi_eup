@@ -19,38 +19,45 @@
 /**
  * Bintree Node class
  * 
+ * @version 10/1/2023
  * @author Jaison Dasika
  * @author Jihoo Jeong
  */
 public class Leafnode extends BintreeNode
 {
     private LinkedList<Seminar> leafList;
+
     /**
      * Constructor
      */
     public Leafnode() {
         this.leafList = new LinkedList<>();
     }
+
     /**
      * Getter for leafList
+     * 
      * @return The linkedList of leaf node
      */
     public LinkedList<Seminar> getSeminarList() {
         return leafList;
     }
+
     /**
      * Add a seminar to the linkedList
-     * @param The seminar to be added
+     * 
+     * @param seminar The seminar to be added
      */
     public void addList(Seminar seminar) {
-       leafList.add(seminar);
+        leafList.add(seminar);
     }
+
     /**
      * Remove a seminar in the linked list
+     * 
      * @param seminar The seminar to be removed.
      */
     public void removeList(Seminar seminar) {
         leafList.remove(seminar);
     }
-
 }

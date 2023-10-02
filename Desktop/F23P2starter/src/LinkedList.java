@@ -19,13 +19,16 @@
 /**
  * LinkedList class
  * 
+ * @version 10/1/2023
  * @author Jaison Dasika
  * @author Jihoo Jeong
+ * @param <T> generic type
  */
-class LinkedList<T> {
-    
+class LinkedList<T>
+{
     private Node<T> head;
     private int size;
+
     /**
      * Constructor of LinkedList
      */
@@ -33,76 +36,126 @@ class LinkedList<T> {
         this.head = null;
         this.size = 0;
     }
+
     /**
      * Add data to the linked list
+     * 
      * @param data The data to be added
      */
     public void add(T data) {
         Node<T> newNode = new Node<>(data);
         if (head == null) {
             head = newNode;
-        } else {
+        }
+        else {
             Node<T> current = head;
-            while (current.next != null) {
-                current = current.next;
+            while (current.getNext() != null) {
+                current = current.getNext();
             }
-            current.next = newNode;
+            current.setNext(newNode);
         }
         size++;
     }
+
     /**
      * Remove a data from the linked list
+     * 
      * @param data The data to be removed
      */
     public void remove(T data) {
         if (head == null) {
             return;
         }
-
-        if (head.data == data) {
-            head = head.next;
+        if (head.getData().equals(data)) {
+            head = head.getNext();
             size--;
             return;
         }
-
         Node<T> current = head;
         Node<T> prev = null;
-
-        while (current != null && current.data != data) {
+        while (current != null && !current.getData().equals(data)) {
             prev = current;
-            current = current.next;
+            current = current.getNext();
         }
-
         if (current == null) {
             return;
         }
-
-        prev.next = current.next;
+        prev.setNext(current.getNext());
         size--;
     }
+
     /**
      * Getter for the size of the linked list
+     * 
      * @return The size of the linked list
      */
     public int getSize() {
         return size;
     }
 }
+
 /**
  * Node class for linked list node
+ * 
+ * @version 10/1/2023
  * @author Jaison Dasika
  * @author Jihoo Jeong
- *
+ * @param <T>
  */
-class Node<T> {
-    T data;
-    Node<T> next;
+class Node<T>
+{
+    /**
+     * data field
+     */
+    private T data;
+    /**
+     * next node field
+     */
+    private Node<T> next;
+
     /**
      * Constructor
+     * 
      * @param data The data in the node
      */
     public Node(T data) {
         this.data = data;
         this.next = null;
+    }
+
+    /**
+     * Getter for node data
+     * 
+     * @return the data
+     */
+    public T getData() {
+        return data;
+    }
+
+    /**
+     * Setter for node data
+     * 
+     * @param data The data
+     */
+    public void setData(T data) {
+        this.data = data;
+    }
+
+    /**
+     * Getter for next node
+     * 
+     * @return next node
+     */
+    public Node<T> getNext() {
+        return next;
+    }
+
+    /**
+     * Setter for next node
+     * 
+     * @param next The next node
+     */
+    public void setNext(Node<T> next) {
+        this.next = next;
     }
 }
